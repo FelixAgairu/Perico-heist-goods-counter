@@ -121,6 +121,7 @@ const Counter = {
       const element = document.querySelector(`#${object.name}-bag`);
       if (amount !== 0) {
         element.innerHTML = `${amount} <span>${langCayoPerico[currLang]["sele_" + object.name] + langCayoPerico[currLang].order_bags} - ${object.clicks}</span>`;
+		console.log(object.name);
         element.parentElement.classList.remove('hidden');
       }
       bags[object.name] = [Number(amount), Number(object.clicks.replace(/clicks|cuts/g, '')), Number(htmlElements[object.name].value)];
