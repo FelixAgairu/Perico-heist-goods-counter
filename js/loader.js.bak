@@ -17,14 +17,16 @@ class Loader {
     });
   }
   constructor(url, noCache) {
-    this._json = (async () => {
-      try {
-		const response = await fetch(`${url}?nocache=${noCache || new Date().toISOString().split('T')[0]}`);
-		return await response.json();
-      } catch (err) {
-        throw new Error(`Failed to load: ${url}\n${err}`);
-      }
-    })();
+	import jsonData from url assert { type: 'json' };
+    this._json = jsonData;
+    // this._json = (async () => {
+      // try {
+		// const response = await fetch(`${url}?nocache=${noCache || new Date().toISOString().split('T')[0]}`);
+		// return await response.json();
+      // } catch (err) {
+        // throw new Error(`Failed to load: ${url}\n${err}`);
+      // }
+    // })();
   }
   execute(...args) {
     const json = this._json;
