@@ -5,6 +5,7 @@ $("#languageSwitch").on("change", function() {
     $("body > div.credentials > h5:nth-child(2)").html(langCayoPerico[currLang].W_I_P);
     $("body > div.credentials > h5:nth-child(3)").html(langCayoPerico[currLang].report_issue);
     $("body > div.credentials > h5:nth-child(4)").html(langCayoPerico[currLang].support_dev);
+    $("body > div.credentials > h5:nth-child(5)").html(langCayoPerico[currLang].and_others);
 	
     $(".main-container [value='false']").html(langCayoPerico[currLang].sele_NO);
     $(".main-container [value='true']").html(langCayoPerico[currLang].sele_YES);
@@ -65,10 +66,11 @@ $("#languageSwitch").on("change", function() {
 
 var langCayoPerico = {
 	en_US: {
-		auth_name: "Created by: <a href='https://github.com/MichalD96' target='_blank'>Michal__d</a> Translation+Tweaking: <a href='https://github.com/FelixAgairu' target='_blank'>FelixAgairu</a>",
+		auth_name: "Created by: <a href='https://github.com/MichalD96' target='_blank'>Michal__d</a>",
 		W_I_P: "Site build in progress ;)",
 		report_issue: "Report all issues <a target='_blank' href='https://github.com/MichalD96/Perico-heist-goods-counter/issues/'>Here (GitHub)</a>",
 		support_dev: "Support the project <a target='_blank' href='https://www.paypal.com/paypalme/Michald96'>Here (PayPal)</a>",
+		and_others: "Translation+Tweaking: <a href='https://github.com/FelixAgairu' target='_blank'>FelixAgairu</a>",
 		
 		sele_NO: "No",
 		sele_YES: "Yes",
@@ -126,10 +128,11 @@ var langCayoPerico = {
 		note_b: "** - value over amount of players is not a bug, in some specific cases you can pick up more than your bags capacity"
 	},
 	zh_CN: {
-		auth_name: "作者：<a href='https://github.com/MichalD96' target='_blank'>Michal__d</a> 翻译+调整：<a href='https://github.com/FelixAgairu' target='_blank'>FelixAgairu</a>",
+		auth_name: "作者：<a href='https://github.com/MichalD96' target='_blank'>Michal__d</a>",
 		W_I_P: "网站正在建设中 ;)",
 		report_issue: "<a target='_blank' href='https://github.com/MichalD96/Perico-heist-goods-counter/issues/'>在此处（GitHub）</a>报告问题",
 		support_dev: "<a target='_blank' href='https://www.paypal.com/paypalme/Michald96'>在此处（PayPal）</a>支持开发者",
+		and_others: "翻译+调整：<a href='https://github.com/FelixAgairu' target='_blank'>FelixAgairu</a>",
 		
 		sele_NO: "否",
 		sele_YES: "是",

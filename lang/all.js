@@ -145,7 +145,7 @@ var langCayoPerico = {
 		
 		sele_lang: "语言：",
 		sele_hard: "困难模式：",
-		sele_bonus: "72小说奖励：",
+		sele_bonus: "72小时奖励：",
 		sele_target: "主要目标：",
 		sele_players: "玩家数量：",
 		sele_goldAlone: "独自收黄金？",
