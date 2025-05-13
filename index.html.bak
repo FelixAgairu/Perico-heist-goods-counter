@@ -25,6 +25,7 @@
     <h5>Site build in progress ;)</h5>
     <h5>Report all issues <a target="_blank" href="https://github.com/MichalD96/Perico-heist-goods-counter/issues/">Here (GitHub)</a></h5>
     <h5>Support the project <a target="_blank" href="https://www.paypal.com/paypalme/Michald96">Here (PayPal)</a></h5>
+	<h5>Translation+Tweaking: <a href='https://github.com/FelixAgairu' target='_blank'>FelixAgairu</a>
   </div>
   <div class="flex">
 
@@ -193,7 +194,7 @@
     </div>
   </div>
   <script src="js/jquery-3.7.1.min.js"></script>
-  <script type="module" src="js/loader.js?nocache=1009"></script>
+  <script src="js/loader.js?nocache=1009"></script>
   <script src="js/settings.js?nocache=1009"></script>
   <script src="js/logic.js?nocache=1009"></script>
   <script src="lang/all.js"></script>
