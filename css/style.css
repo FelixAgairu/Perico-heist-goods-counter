@@ -112,11 +112,11 @@ body {
 }
 
 
-#max-loot-value {
+#fin-loot-value {
   color: greenyellow;
 }
 
-#max-loot-value::before {
+#fin-loot-value::before {
   content: '$';
   color: greenyellow;
 }

@@ -140,20 +140,22 @@ function setClipboardText(text) {
 // General settings
 const Settings = SettingProxy.createSettingProxy(mainSettingsPrefix);
 Object.entries({
+  languageSwitch: { default: 'en_US' },
   isHardMode: { default: false },
   isWithinCooldown: { default: false },
   amountOfPlayers: { default: 2 },
   goldAlone: { default: false },
-  primaryTarget: { default: 'pink_diamond' },
+  primaryTarget: { default: 'tequila' },
   gold: { default: 0 },
   cocaine: { default: 0 },
   cash: { default: 0 },
   paintings: { default: 0 },
   weed: { default: 0 },
-  leaderCut: { default: 80 },
-  member1Cut: { default: 20 },
+  infoDisplay: { default: 'avg' },
+  leaderCut: { default: 15 },
+  member1Cut: { default: 15 },
   member2Cut: { default: 15 },
-  member3Cut: { default: 15 },
+  member3Cut: { default: 15 }
 }).forEach(([name, config]) => {
   SettingProxy.addSetting(Settings, name, config);
 
