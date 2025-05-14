@@ -31,7 +31,7 @@ function updateLanguage(currLang) {
     $("body > div.flex > div:nth-child(1) > div:nth-child(10) > label").html(langCayoPerico[currLang].sele_paintings + langCayoPerico[currLang].secd_unit_paints);
     $("body > div.flex > div:nth-child(1) > div:nth-child(11) > label").html(langCayoPerico[currLang].sele_cash + langCayoPerico[currLang].secd_unit);
 	
-    $("#infoDisplay").parent().find("label").html(langCayoPerico[currLang].secd_title);
+    $("#infoDisplay").parent().find("label").html(langCayoPerico[currLang].sele_profit);
 		$("#infoDisplay [value='min']").html(langCayoPerico[currLang].secd_min);
 		$("#infoDisplay [value='avg']").html(langCayoPerico[currLang].secd_avg);
 		$("#infoDisplay [value='max']").html(langCayoPerico[currLang].secd_max);

@@ -150,7 +150,7 @@ var langCayoPerico = {
 		main_tequ: "西西米托龙舌兰酒",
 		main_ruby: "红宝石项链",
 		main_bond: "不记名债券",
-		main_file: "德拉索文件",
+		main_file: "马德拉索文件",
 		main_pink: "粉钻",
 		main_tank: "黑豹雕像",
 		
