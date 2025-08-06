@@ -20,6 +20,7 @@ document.querySelector('#isWithinCooldown').value = Settings.isWithinCooldown;
 document.querySelector('#goldAlone').value = Settings.goldAlone;
 document.querySelector('#primaryTarget').value = Settings.primaryTarget;
 let bags = {};
+let isPainting = false;
 
 const Counter = {
   targetsData: {},
@@ -73,10 +74,15 @@ const Counter = {
         if (value % 10 !== 0 && (['cocaine', 'cash'].includes(obj.name) || ['weed'].includes(obj.name) && players > 1)) {
           value += 1;
         }
+
+		obj.name === 'paintings' ? isPainting = true : isPainting = false;
+		
         return obj.name === 'paintings' ? `${value * 4} ${langCayoPerico[Settings.languageSwitch].order_cuts}` : `${value} ${langCayoPerico[Settings.languageSwitch].order_clicks}`;
       })();
+	  
+	  let bagsFillx = (realFill / obj.weight).toFixed(2);
 
-      amounts.push({ name: obj.name, amount: realFill, clicks: clicks });
+      amounts.push({ name: obj.name, amount: realFill, clicks: clicks, bagsFillx: bagsFillx, isPainting: isPainting });
 	  
       totalMinValue += realFill * (obj.value.min * withinCooldownSecondaryBonus / obj.weight);
       totalAvgValue += realFill * (getAverage(obj.value.min, obj.value.max) * withinCooldownSecondaryBonus / obj.weight);
@@ -106,8 +112,8 @@ const Counter = {
 			const fencingMinFee = totalMinValue * 0.1;
 			const pavelMinFee = totalMinValue * 0.02;
 			const finalMinValue = totalMinValue - fencingMinFee - pavelMinFee;
-			document.querySelector('#fencing-fee').innerText = "$"+Math.round(fencingMinFee).toLocaleString();
-			document.querySelector('#pavel-fee').innerText = "$"+Math.round(pavelMinFee).toLocaleString();
+			document.querySelector('#fencing-fee').innerText = Math.round(fencingMinFee).toLocaleString();
+			document.querySelector('#pavel-fee').innerText = Math.round(pavelMinFee).toLocaleString();
 			document.querySelector('#fin-loot-value').innerText = Math.round(finalMinValue).toLocaleString();
 
 			Counter.targetsData.targets.secondary.forEach(({ name, value: { min, max } }) => {
@@ -135,8 +141,8 @@ const Counter = {
 			const fencingAvgFee = totalAvgValue * 0.1;
 			const pavelAvgFee = totalAvgValue * 0.02;
 			const finalAvgValue = totalAvgValue - fencingAvgFee - pavelAvgFee + getAverage(officeSafe.min, officeSafe.max);
-			document.querySelector('#fencing-fee').innerText = "$"+Math.round(fencingAvgFee).toLocaleString();
-			document.querySelector('#pavel-fee').innerText = "$"+Math.round(pavelAvgFee).toLocaleString();
+			document.querySelector('#fencing-fee').innerText = Math.round(fencingAvgFee).toLocaleString();
+			document.querySelector('#pavel-fee').innerText = Math.round(pavelAvgFee).toLocaleString();
 			document.querySelector('#office-safe').innerText = `$${getAverage(officeSafe.min, officeSafe.max).toLocaleString()}`;
 			document.querySelector('#fin-loot-value').innerText = Math.round(finalAvgValue).toLocaleString();
 
@@ -165,8 +171,8 @@ const Counter = {
 			const fencingMaxFee = totalMaxValue * 0.1;
 			const pavelMaxFee = totalMaxValue * 0.02;
 			const finalMaxValue = totalMaxValue - fencingMaxFee - pavelMaxFee + officeSafe.max + eliteChallenge * Settings.amountOfPlayers;
-			document.querySelector('#fencing-fee').innerText = "$"+Math.round(fencingMaxFee).toLocaleString();
-			document.querySelector('#pavel-fee').innerText = "$"+Math.round(pavelMaxFee).toLocaleString();
+			document.querySelector('#fencing-fee').innerText = Math.round(fencingMaxFee).toLocaleString();
+			document.querySelector('#pavel-fee').innerText = Math.round(pavelMaxFee).toLocaleString();
 			document.querySelector('#office-safe').innerText = `$${officeSafe.max.toLocaleString()}`;
 			document.querySelector('#elite-challenge').innerText = Math.round(eliteChallenge).toLocaleString();
 			document.querySelector('#fin-loot-value').innerText = Math.round(finalMaxValue).toLocaleString();
@@ -199,8 +205,15 @@ const Counter = {
     amounts.forEach(object => {
       const amount = rounding(Number(object.amount));
       const element = document.querySelector(`#${object.name}-bag`);
+	  
+	  let theUnits = langCayoPerico[Settings.languageSwitch]["secd_unit"];
+	  if (object.isPainting) {theUnits = langCayoPerico[Settings.languageSwitch]["secd_unit_paints"];}
+	  
       if (amount !== 0) {
-        element.innerHTML = `${amount} <span>${langCayoPerico[Settings.languageSwitch]["sele_" + object.name] + langCayoPerico[Settings.languageSwitch].order_bags} - ${object.clicks}</span>`;
+        element.innerHTML = 
+			`${amount} <span>
+			${langCayoPerico[Settings.languageSwitch]["sele_" + object.name] + langCayoPerico[Settings.languageSwitch].order_bags}</span><br>
+			<span class="dimmed">${object.bagsFillx} ${theUnits} - ${object.clicks}</span>`;
         element.parentElement.classList.remove('hidden');
       }
       bags[object.name] = [Number(amount), Number(object.clicks.replace(/clicks|cuts/g, '')), Number(htmlElements[object.name].value)];

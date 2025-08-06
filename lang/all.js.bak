@@ -102,8 +102,8 @@ var langCayoPerico = {
 		sele_cash: "Cash",
 		sele_profit: "Show Possible Profit In:",
 		
-		secd_unit: " Stacks:",
-		secd_unit_paints: " Frames:",
+		secd_unit: "Stacks",
+		secd_unit_paints: "Frames",
 		
 		secd_min: "minimum",
 		secd_avg: "Average",
@@ -126,9 +126,9 @@ var langCayoPerico = {
 		info_profit: 'Possible Profit',
 		
 		info_order: 'You can take (in profit order):',
-		order_bags: " bag(s)",
-		order_cuts: " cuts",
-		order_clicks: " clicks",
+		order_bags: " Bag(s)",
+		order_cuts: " Cuts",
+		order_clicks: " Clicks",
 		
 		info_bags: 'Bag(s) Total',
 		
@@ -147,10 +147,10 @@ var langCayoPerico = {
 		sele_NO: "否",
 		sele_YES: "是",
 		
-		main_tequ: "西西米托龙舌兰酒",
+		main_tequ: "西西米托龙舌兰",
 		main_ruby: "红宝石项链",
 		main_bond: "不记名债券",
-		main_file: "德拉索文件",
+		main_file: "马德拉索文件",
 		main_pink: "粉钻",
 		main_tank: "黑豹雕像",
 		
@@ -161,14 +161,14 @@ var langCayoPerico = {
 		sele_players: "玩家数量：",
 		sele_goldAlone: "独自收黄金？",
 		sele_gold: "黄金",
-		sele_cocaine: "普洱茶",
-		sele_weed: "绿茶",
+		sele_cocaine: "可卡因",
+		sele_weed: "大麻",
 		sele_paintings: "画",
 		sele_cash: "现金",
 		sele_profit: "预计收益显示：",
 		
-		secd_unit: "（堆）：",
-		secd_unit_paints: "（幅）：",
+		secd_unit: "堆",
+		secd_unit_paints: "幅",
 		
 		secd_min: "最小值",
 		secd_avg: "平均值",
